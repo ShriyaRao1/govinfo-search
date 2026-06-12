@@ -5,7 +5,7 @@ require('dotenv').config();
 const searchRoutes = require('./routes/search');
 const notificationRoutes = require('./routes/notifications');
 const authRoutes = require('./routes/auth');
-// Phase 5: admin routes
+const adminRoutes = require('./routes/admin');
 
 const app = express();
 
@@ -26,7 +26,7 @@ app.get('/api/health', (req, res) => {
 app.use('/api/search', searchRoutes);
 app.use('/api/notifications', notificationRoutes);
 app.use('/api/auth', authRoutes);
-// app.use('/api/admin', adminRoutes);    // Phase 5
+app.use('/api/admin', adminRoutes);
 
 // ── 404 handler ────────────────────────────────────────────────
 app.use((req, res) => {

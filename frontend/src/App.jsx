@@ -7,8 +7,7 @@ import NotificationDetailPage from './pages/NotificationDetailPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ProtectedRoute from './components/ProtectedRoute';
-// Phase 5: admin
-// import AdminDashboard from './pages/AdminDashboard';
+import AdminDashboard from './pages/AdminDashboard';
 
 function App() {
   return (
@@ -23,8 +22,14 @@ function App() {
               <Route path="/notifications/:id" element={<NotificationDetailPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
-              {/* Phase 5 routes */}
-              {/* <Route path="/admin" element={<ProtectedRoute adminOnly><AdminDashboard /></ProtectedRoute>} /> */}
+              <Route
+                path="/admin"
+                element={
+                  <ProtectedRoute adminOnly>
+                    <AdminDashboard />
+                  </ProtectedRoute>
+                }
+              />
               <Route path="*" element={
                 <div className="container py-5 text-center">
                   <h2>404 — Page Not Found</h2>
