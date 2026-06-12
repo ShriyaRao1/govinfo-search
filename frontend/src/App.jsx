@@ -4,12 +4,11 @@ import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import SearchResultsPage from './pages/SearchResultsPage';
 import NotificationDetailPage from './pages/NotificationDetailPage';
-// Phase 4: auth pages
-// import LoginPage from './pages/LoginPage';
-// import RegisterPage from './pages/RegisterPage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import ProtectedRoute from './components/ProtectedRoute';
 // Phase 5: admin
 // import AdminDashboard from './pages/AdminDashboard';
-// import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -22,9 +21,8 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/search" element={<SearchResultsPage />} />
               <Route path="/notifications/:id" element={<NotificationDetailPage />} />
-              {/* Phase 4 routes */}
-              {/* <Route path="/login" element={<LoginPage />} /> */}
-              {/* <Route path="/register" element={<RegisterPage />} /> */}
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
               {/* Phase 5 routes */}
               {/* <Route path="/admin" element={<ProtectedRoute adminOnly><AdminDashboard /></ProtectedRoute>} /> */}
               <Route path="*" element={

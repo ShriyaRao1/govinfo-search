@@ -8,12 +8,15 @@
 SET NAMES utf8mb4;
 
 -- ── Admin User ────────────────────────────────────────────────
--- Password: Admin@123  (bcrypt hash, cost=10)
+-- Password: Admin@123
+-- Hash generated with: bcrypt.hashSync('Admin@123', 10)
+-- If this hash doesn't work after re-seeding, run:
+--   node backend/scripts/fix-admin-password.js
 INSERT INTO User (name, email, password_hash, role) VALUES
 (
   'GovInfo Admin',
   'admin@govinfo.in',
-  '$2a$10$X9nJz3K2mLpQ8vW5rT4uOOqY6hE1dFbVcNs0wA7gHkM3IiXeJtPyu',
+  '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
   'admin'
 );
 
