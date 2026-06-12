@@ -1,4 +1,38 @@
-/* Global styles — Phase 1 placeholder, expanded in Phase 3 */
+/* Global styles for GovInfo Search */
+
 body {
-  background-color: #f8f9fa;
+  background-color: #f4f6f9;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Card hover lift effect */
+.card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Stretched-link cards: prevent inner links from inheriting the hover transform jump */
+.card .stretched-link::after {
+  z-index: 1;
+}
+
+/* Truncate long breadcrumb items */
+.breadcrumb-item.text-truncate {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Navbar search input on small screens */
+@media (max-width: 991px) {
+  .navbar-collapse .d-flex {
+    margin: 0.5rem 0;
+  }
+}
+
+/* PDF text block */
+#detail-pdf-text {
+  border-left: 3px solid #0d6efd;
 }
