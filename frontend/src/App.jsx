@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import Navbar from './components/Navbar';
+import ChatWidget from './components/ChatWidget';
 import HomePage from './pages/HomePage';
 import SearchResultsPage from './pages/SearchResultsPage';
 import NotificationDetailPage from './pages/NotificationDetailPage';
@@ -39,8 +40,9 @@ function App() {
             </Routes>
           </main>
           <footer className="bg-light border-top py-3 text-center text-muted small">
-            © 2024 GovInfo Search — Government Notification Portal
+            © {new Date().getFullYear()} GovInfo Search — Government Notification Portal
           </footer>
+          <ChatWidget />
         </div>
       </AuthProvider>
     </BrowserRouter>

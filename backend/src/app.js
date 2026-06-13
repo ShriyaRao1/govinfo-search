@@ -6,6 +6,7 @@ const searchRoutes = require('./routes/search');
 const notificationRoutes = require('./routes/notifications');
 const authRoutes = require('./routes/auth');
 const adminRoutes = require('./routes/admin');
+const chatRoutes = require('./routes/chat');
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use('/api/search', searchRoutes);
 app.use('/api/notifications', notificationRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/chat', chatRoutes);
 
 // ── 404 handler ────────────────────────────────────────────────
 app.use((req, res) => {

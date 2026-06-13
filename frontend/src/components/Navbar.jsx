@@ -69,26 +69,15 @@ export default function Navbar() {
                     <Link className="nav-link" to="/admin">Admin</Link>
                   </li>
                 )}
-                <li className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href="#"
-                    id="userDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
+                <li className="nav-item d-flex align-items-center gap-2">
+                  <span className="navbar-text text-white-50 small">👤 {user.name}</span>
+                  <button
+                    id="logout-btn"
+                    className="btn btn-outline-light btn-sm px-3"
+                    onClick={handleLogout}
                   >
-                    👤 {user.name}
-                  </a>
-                  <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                    <li><span className="dropdown-item-text text-muted small">{user.email}</span></li>
-                    <li><hr className="dropdown-divider" /></li>
-                    <li>
-                      <button id="logout-btn" className="dropdown-item text-danger" onClick={handleLogout}>
-                        Logout
-                      </button>
-                    </li>
-                  </ul>
+                    Logout
+                  </button>
                 </li>
               </>
             ) : (
